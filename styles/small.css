@@ -1,0 +1,72 @@
+/* small.css - mobile first (English comments) */
+
+:root{
+  --primary: #0a84ff;
+  --secondary: #111111;
+  --background: #f5f5f7;
+  --text: #1d1d1f;
+  --success: #34c759;
+  --muted: #777;
+}
+
+/* Basic reset & type */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:var(--background);color:var(--text)}
+img{max-width:100%;height:auto;display:block}
+
+/* Layout container */
+.container{width:92%;max-width:1100px;margin:0 auto}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid #e6e6e6;position:sticky;top:0;z-index:1000}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit}
+.logo img{width:44px;height:44px}
+.author-name{font-weight:600;font-size:1rem}
+
+/* Navigation (mobile-first) */
+.hamburger{display:inline-flex;flex-direction:column;gap:4px;background:transparent;border:0;cursor:pointer;padding:6px}
+.hamburger-bar{width:22px;height:2px;background:#333}
+.primary-nav{display:none}
+.primary-nav .nav-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.25rem}
+.primary-nav a{text-decoration:none;padding:.5rem 0;color:var(--text)}
+
+/* Main & sections */
+.main-content{padding:1.25rem 0 3rem}
+h1{font-size:1.6rem;margin:0 0 1rem}
+.section-heading{background:var(--secondary);color:#fff;padding:.35rem .6rem;border-radius:4px;font-weight:700;margin:0 0 .6rem}
+.card{background:#fff;border-radius:6px;padding:.8rem;margin-bottom:.9rem;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.about-row{display:grid;gap:.8rem} /* stacked on small screens */
+.about-me .card-title,.student-photo .card-title{font-size:0.95rem;margin:0 0 .5rem}
+.about-text{color:var(--muted);line-height:1.5;font-size:0.95rem}
+
+/* Student photo */
+.photo-wrapper{background:#f0f0f0;padding:1rem;border-radius:6px;display:flex;justify-content:center;align-items:center}
+#student-photo{width:220px;height:220px;object-fit:cover;border-radius:6px}
+
+/* Courses */
+.courses-section{margin-top:0}
+.courses-controls{display:flex;flex-direction:column;gap:.6rem;margin-bottom:.6rem}
+.filter-buttons{display:flex;gap:0.5rem;flex-wrap:wrap}
+.filter-btn{border:1px solid #ddd;background:#fff;padding:.45rem .6rem;border-radius:8px;cursor:pointer;font-weight:600}
+.filter-btn.active,.filter-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.courses-list{display:grid;gap:.75rem;grid-template-columns:1fr;margin-bottom:.6rem}
+.course-card{border:1px solid #eaeaea;padding:.85rem;border-radius:8px;display:flex;flex-direction:column;gap:.4rem}
+.course-card .title{font-weight:700}
+.course-card .meta{font-size:.9rem;color:#555;display:flex;gap:.6rem;align-items:center}
+.course-card.completed{background:#e8fbe8;border-color:var(--success)}
+
+/* Credits */
+.credits-line{text-align:center;color:var(--muted);font-size:.95rem;margin-top:.5rem}
+
+/* Callout */
+.callout{margin-top:1rem}
+
+/* Footer */
+.site-footer{padding:1rem 0;margin-top:1rem;color:#555;font-size:.95rem}
+.footer-inner{display:flex;flex-direction:column;gap:.5rem;align-items:flex-start}
+
+/* Small-screen adjustments */
+@media (max-width:420px){
+  #student-photo{width:200px;height:200px}
+}

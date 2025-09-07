@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course Home — Samuel Cortez, WDD231</title>
+  <meta name="description" content="Course Home Page for WDD231. W01 Assignment: Course Home Page." />
+  <meta name="author" content="Your Name" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+  <!-- Scripts -->
+  <script defer src="scripts/navigation.js"></script>
+  <script defer src="scripts/date.js"></script>
+  <script defer src="scripts/course.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Homepage">
+        <img src="images/logo.svg" alt="Site Logo" id="site-logo" />
+        <span class="author-name">Samuel Cortez</span>
+      </a>
+
+      <button id="btn-toggle-nav" class="hamburger" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="chamber.html">Chamber Project</a></li>
+          <li><a href="final.html">Final Project</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content" id="top">
+    <h1>Home</h1>
+
+    <!-- Intro -->
+    <section class="intro">
+      <h2 class="section-heading">Welcome</h2>
+      <p>This page demonstrates prerequisite knowledge of HTML, CSS, and JavaScript. Below you will see the certificate courses, credits, and interactive course filtering.</p>
+    </section>
+
+    <!-- About / Student photo row -->
+    <section class="about-row" aria-label="About student and photo">
+      <div class="about-me card" aria-labelledby="about-heading">
+        <h3 id="about-heading" class="card-title">About Me</h3>
+        <p class="about-text">
+          Hi — I am <strong>Samuel Cortez</strong>, a 23-year-old student of Web and Computer Programming. I’m genuinely passionate about computing and technology, and I combine that enthusiasm with practical experience working at a technology company where I help deliver real projects, collaborate with cross-functional teams, and apply industry best practices for readable, maintainable code. My studies have given me a solid foundation in responsive design, front-end development, and accessible interfaces, and on the job I continually sharpen those skills by building user-focused features, debugging complex issues, and learning new tools and frameworks. I enjoy problem solving, improving user experiences, and producing interfaces that balance aesthetics with usability and performance. Outside of tech, I’m a devoted football fan — I love both playing and watching the game because it keeps me active and reinforces teamwork, discipline, and resilience. I also treasure sharing mate and long conversations with family and friends; those relaxed moments recharge me and remind me why I value collaboration and human-centered design. My goal is to grow as a developer, take on increasingly challenging projects, and contribute to products that make people’s lives simpler and more enjoyable.
+        </p>
+      </div>
+
+      <aside class="student-photo card" aria-labelledby="photo-heading">
+        <h3 id="photo-heading" class="card-title">Student Photo</h3>
+        <div class="photo-wrapper">
+          <!-- Put your optimized student photo in images/student.jpg -->
+          <img src="images/student.jpg" alt="Student photo of Your Name" id="student-photo">
+        </div>
+      </aside>
+    </section>
+
+    <!-- Courses -->
+    <section class="courses-section" aria-labelledby="courses-heading">
+      <h2 id="courses-heading" class="section-heading">Web Certificate Courses</h2>
+
+      <div class="courses-controls">
+        <div class="filter-buttons" role="toolbar" aria-label="Filter courses">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="CSE">CSE</button>
+          <button class="filter-btn" data-filter="WDD">WDD</button>
+        </div>
+      </div>
+
+      <div id="courses-list" class="courses-list" aria-live="polite"></div>
+
+      <div class="credits-line">
+        <p class="credits-text">The total credits for courses listed above is <strong id="creditTotal">0</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Callout / next steps -->
+    <section class="callout">
+      <h2 class="section-heading">Next Steps</h2>
+      <p>Connect with your group on Microsoft Teams and prepare for your first official meeting next week.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="socials">
+        <a href="https://github.com/SamuelCortez24" target="_blank" rel="noopener">GitHub</a> |
+        <a href="https://www.linkedin.com/in/pablo-samuel-cortez-241796280/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+
+      <p>
+        &copy; <span id="currentyear"></span> Samuel Cortez — Montevideo, Uruguay
+      </p>
+
+      <p id="lastModified">Last modification: <span id="lastModifiedText"></span></p>
+    </div>
+  </footer>
+</body>
+</html>
