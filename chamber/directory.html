@@ -1,62 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chamber Directory | Montevideo Chamber of Commerce</title>
-  <meta name="description" content="Business directory for the Montevideo Chamber of Commerce.">
-  <meta name="author" content="Samuel Cortez">
-
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
-  <meta property="og:title" content="Montevideo Chamber of Commerce Directory">
-  <meta property="og:description" content="Explore our member businesses, discover services, and connect with the Montevideo community.">
-  <meta property="og:image" content="https://samuelcortez24.github.io/wdd231/chamber/images/logo.svg">
-  <meta property="og:url" content="https://samuelcortez24.github.io/wdd231/chamber/directory.html">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/large.css">
-
-  <script defer src="scripts/directory.js"></script>
-  <script defer src="scripts/date.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Directory | Montevideo Chamber</title>
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/small.css">
+<link rel="stylesheet" href="styles/large.css">
+<script defer src="scripts/directory.js"></script>
+<script defer src="scripts/date.js"></script>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="directory.html" class="logo">
-        <img src="images/logo.svg" alt="Chamber Logo">
-        <span>Montevideo Chamber</span>
-      </a>
-      <nav id="primary-nav">
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="directory.html" class="active">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <h1>Business Directory</h1>
-    <div class="menu" role="toolbar" aria-label="View toggle">
-      <button id="grid" aria-pressed="true">Grid View</button>
-      <button id="list" aria-pressed="false">List View</button>
-    </div>
-
-    <article id="members" class="grid" aria-live="polite"></article>
-  </main>
-
-  <footer>
-    <p>&copy; <span id="currentyear"></span> | Samuel Cortez | WDD 231</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
-    <address>Montevideo, Uruguay | contact@montevideochamber.org</address>
-  </footer>
+<header class="header-inner container">
+  <a class="logo" href="index.html"><img src="images/logo.svg" alt="logo" width="44" height="44"><span>Montevideo Chamber</span></a>
+  <nav><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="directory.html" class="active">Directory</a></li><li><a href="discover.html">Discover</a></li><li><a href="join.html">Join</a></li></ul></nav>
+</header>
+<main class="container">
+  <h1>Directory</h1>
+  <div class="menu" role="toolbar"><button id="grid" aria-pressed="true">Grid</button><button id="list" aria-pressed="false">List</button></div>
+  <article id="members" class="grid"></article>
+</main>
+<footer class="site-footer container"><p>&copy; <span id="currentyear"></span> Montevideo Chamber</p></footer>
 </body>
 </html>

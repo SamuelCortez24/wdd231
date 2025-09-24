@@ -8,16 +8,18 @@ function setActiveButton(activeBtn, inactiveBtn){
 }
 
 // Toggle views
-gridButton.addEventListener("click", () => {
-  display.classList.add("grid");
-  display.classList.remove("list");
-  setActiveButton(gridButton, listButton);
-});
-listButton.addEventListener("click", () => {
-  display.classList.add("list");
-  display.classList.remove("grid");
-  setActiveButton(listButton, gridButton);
-});
+if (gridButton && listButton && display) {
+  gridButton.addEventListener("click", () => {
+    display.classList.add("grid");
+    display.classList.remove("list");
+    setActiveButton(gridButton, listButton);
+  });
+  listButton.addEventListener("click", () => {
+    display.classList.add("list");
+    display.classList.remove("grid");
+    setActiveButton(listButton, gridButton);
+  });
+}
 
 // Fetch members.json and display
 async function getMembers() {
@@ -27,19 +29,22 @@ async function getMembers() {
     const data = await response.json();
     displayMembers(data.members);
   } catch (err) {
-    display.innerHTML = '<p style="color:#900">Failed to load members data.</p>';
+    if (display) display.innerHTML = '<p style="color:#900">Failed to load members data.</p>';
     console.error(err);
   }
 }
 
 function displayMembers(members) {
+  if (!display) return;
   display.innerHTML = "";
   members.forEach(member => {
     const section = document.createElement("section");
     section.classList.add("member-card");
 
     section.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name} logo">
+      <div class="img-wrapper">
+        <img src="images/${member.image}" alt="${member.name} logo">
+      </div>
       <div class="member-info">
         <h3>${member.name}</h3>
         <p>${member.address}</p>

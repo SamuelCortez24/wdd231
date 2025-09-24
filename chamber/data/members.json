@@ -3,7 +3,7 @@
     {
       "name": "Mercado del Puerto",
       "address": "Rambla 25 de Agosto, Ciudad Vieja, Montevideo",
-      "phone": "+598 2716 0800 (tourist info)",
+      "phone": "+598 2716 0800",
       "website": "https://www.mercadodelpuerto.com/",
       "image": "mercado-del-puerto.png",
       "membership": "Gold"
@@ -44,12 +44,12 @@
       "name": "Confiter\u00eda Carrera",
       "address": "Avenida 18 de Julio 1075 (esq. R\u00edo Branco), Montevideo",
       "phone": "+598 2916 2323",
-      "website": "https://carrera.com.uy/",
+      "website": "https://www.confiteriadecarrera.com/",
       "image": "carrera.png",
       "membership": "Member"
     },
     {
-      "name": "Museo Andes 1972 (Museo de los Andes)",
+      "name": "Museo Andes 1972",
       "address": "Rinc\u00f3n 619, Ciudad Vieja, Montevideo",
       "phone": "+598 2916 9461",
       "website": "https://mandes.uy/",

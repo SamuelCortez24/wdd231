@@ -1,0 +1,19 @@
+{
+  "events": [
+    {
+      "title": "Montevideo Food Festival",
+      "date": "2025-10-12",
+      "description": "A celebration of local cuisine and culture at Parque Rod\u00f3."
+    },
+    {
+      "title": "Business Innovation Forum",
+      "date": "2025-10-20",
+      "description": "Networking and talks on entrepreneurship, tech and startups."
+    },
+    {
+      "title": "Old City Walking Tour",
+      "date": "2025-10-25",
+      "description": "Guided tour through the historic Ciudad Vieja with chamber members."
+    }
+  ]
+}
