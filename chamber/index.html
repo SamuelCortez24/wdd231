@@ -1,37 +1,72 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
+  <!-- Charset first (validator-friendly) -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chamber Home — Montevideo Chamber</title>
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
+  <title>Montevideo Chamber — Promoting local businesses & events</title>
+
+  <!-- Basic SEO / Identification -->
+  <meta name="description" content="Montevideo Chamber — promoting local businesses, events and resources across Montevideo. Find member businesses, upcoming events and local weather updates." />
+  <meta name="author" content="Samuel Cortez" />
+
+  <!-- Favicon (local file) -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <!-- Open Graph (social sharing) — replace og:url with your actual published URL -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Montevideo Chamber — Home" />
+  <meta property="og:description" content="Discover Montevideo businesses, events and local weather. Member spotlights and resources for our community." />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <!-- Replace the URL below with your final published page (GitHub Pages URL) -->
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Montevideo Chamber — Home" />
+  <meta name="twitter:description" content="Discover Montevideo businesses, events and local weather." />
+  <meta name="twitter:image" content="images/og-image.jpg" />
+
+  <!-- Optional theme color -->
+  <meta name="theme-color" content="#0a84ff">
+
+  <!-- CSS (mobile-first order) -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/weather.css">
   <link rel="stylesheet" href="styles/large.css">
+
+  <!-- Scripts (defer so DOM is available) -->
   <script defer src="scripts/date.js"></script>
+  <script defer src="scripts/events.js"></script>
   <script defer src="scripts/weather.js"></script>
   <script defer src="scripts/spotlights.js"></script>
-  <script defer src="scripts/events.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="Homepage">
-        <img src="images/logo.svg" alt="Chamber Logo" width="44" height="44">
+        <img src="images/logo.svg" alt="Montevideo Chamber logo" width="44" height="44">
         <span class="site-title">Montevideo Chamber</span>
       </a>
+
       <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="directory.html">Directory</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="join.html">Join</a></li>
-          <link rel="stylesheet" href="styles/weather.css">
         </ul>
       </nav>
     </div>
   </header>
+
   <main class="container main-content">
+    <!-- Hero -->
     <section class="hero">
       <img src="images/hero.png" alt="Montevideo skyline" class="hero-img" />
       <div class="hero-caption">
@@ -40,21 +75,28 @@
         <a href="join.html" class="cta">Join the Chamber</a>
       </div>
     </section>
+
+    <!-- Events (loaded via scripts/events.js) -->
     <section class="events">
       <h2>Upcoming Events</h2>
       <div class="events-list" id="events-list"></div>
     </section>
-    <section class="weather" aria-labelledby="weather-heading">
+
+    <!-- Weather -->
+    <section id="weather" class="weather" aria-labelledby="weather-heading">
       <h2 id="weather-heading">Montevideo Weather</h2>
       <div id="weather-current" class="weather-current" aria-live="polite"><p>Loading weather...</p></div>
       <div id="weather-forecast" class="weather-forecast" aria-live="polite"></div>
       <p class="weather-note">Weather data provided by OpenWeatherMap.</p>
     </section>
+
+    <!-- Spotlights (loaded via scripts/spotlights.js) -->
     <section class="spotlights" aria-labelledby="spotlights-heading">
       <h2 id="spotlights-heading">Member Spotlights</h2>
       <div id="spotlights" class="grid"></div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="currentyear"></span> Montevideo Chamber — Samuel Cortez</p>
