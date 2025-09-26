@@ -1,3 +1,4 @@
+// chamber/scripts/directory.js
 const gridButton = document.querySelector("#grid");
 const listButton = document.querySelector("#list");
 const display = document.querySelector("#members");
@@ -40,7 +41,6 @@ function displayMembers(members) {
   members.forEach(member => {
     const section = document.createElement("section");
     section.classList.add("member-card");
-
     section.innerHTML = `
       <div class="img-wrapper">
         <img src="images/${member.image}" alt="${member.name} logo">
@@ -57,4 +57,4 @@ function displayMembers(members) {
   });
 }
 
-getMembers();
+document.addEventListener("DOMContentLoaded", getMembers);

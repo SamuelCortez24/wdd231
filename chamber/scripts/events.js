@@ -1,3 +1,4 @@
+// chamber/scripts/events.js
 async function loadEvents() {
   try {
     const res = await fetch('data/events.json');

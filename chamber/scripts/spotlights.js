@@ -1,3 +1,4 @@
+// chamber/scripts/spotlights.js
 async function loadSpotlights() {
   try {
     const res = await fetch('data/members.json');

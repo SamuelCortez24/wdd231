@@ -1,6 +1,5 @@
-// scripts/weather.js
-
-const API_KEY = "0a2d0375a53451150f2405a9026a1ad4";
+// chamber/scripts/weather.js
+const API_KEY = "0a2d0375a53451150f2405a9026a1ad4"; 
 const LAT = -34.9011;
 const LON = -56.1645;
 
@@ -8,7 +7,7 @@ const LON = -56.1645;
 async function fetchCurrentWeather() {
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&lang=en&appid=${API_KEY}`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error("Weather API error");
+  if (!res.ok) throw new Error("Weather API error (current)");
   return res.json();
 }
 
@@ -16,7 +15,7 @@ async function fetchCurrentWeather() {
 async function fetchForecast() {
   const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${LAT}&lon=${LON}&units=metric&lang=en&appid=${API_KEY}`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error("Forecast API error");
+  if (!res.ok) throw new Error("Weather API error (forecast)");
   return res.json();
 }
 
@@ -25,30 +24,30 @@ async function renderWeather() {
   const fore = document.getElementById("weather-forecast");
 
   try {
-    // 🌡️ Current weather
     const current = await fetchCurrentWeather();
     cur.innerHTML = `
-      <p><strong>Current:</strong> ${Math.round(current.main.temp)}°C — ${current.weather[0].description}</p>
-      <p><strong>Feels like:</strong> ${Math.round(current.main.feels_like)}°C</p>
+      <div class="weather-card">
+        <img src="https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png" alt="${current.weather[0].description}">
+        <p><strong>${Math.round(current.main.temp)}°C</strong></p>
+        <p>${current.weather[0].description}</p>
+        <p><small>Feels like ${Math.round(current.main.feels_like)}°C</small></p>
+      </div>
     `;
 
-    // 📅 Forecast (next 3 days at 12:00)
+    // Forecast: choose entries at 12:00:00 and show next 3
     const forecast = await fetchForecast();
-    fore.innerHTML = "";
-    const daily = forecast.list.filter(f => f.dt_txt.includes("12:00:00")).slice(0, 3);
+    const midday = forecast.list.filter(f => f.dt_txt.includes("12:00:00")).slice(0, 3);
 
-    daily.forEach(d => {
+    fore.innerHTML = "";
+    midday.forEach(d => {
       const dt = new Date(d.dt * 1000);
-      const dayName = dt.toLocaleDateString("en-US", {
-        weekday: "short",
-        month: "short",
-        day: "numeric"
-      });
+      const dayName = dt.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 
       const el = document.createElement("div");
       el.className = "forecast-day";
       el.innerHTML = `
         <strong>${dayName}</strong>
+        <img src="https://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png" alt="${d.weather[0].description}">
         <p>${Math.round(d.main.temp)}°C</p>
         <p>${d.weather[0].description}</p>
       `;
@@ -57,7 +56,8 @@ async function renderWeather() {
 
   } catch (err) {
     console.error("Weather error:", err);
-    cur.innerHTML = "<p style='color:#900'>Unable to load weather data.</p>";
+    if (cur) cur.innerHTML = "<p style='color:#900'>Unable to load weather data. Check console for details.</p>";
+    if (fore) fore.innerHTML = "";
   }
 }
 
