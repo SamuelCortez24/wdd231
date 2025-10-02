@@ -1,0 +1,171 @@
+/* join.css — full updated version */
+
+/* Headline */
+.join-page h1 { 
+  margin-bottom: 1rem; 
+  font-size: 1.6rem;
+}
+
+/* Layout grid */
+.join-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Form styles */
+.join-form-wrap form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: .75rem; 
+  background: #fff; 
+  padding: 1rem; 
+  border: 1px solid #e6e6e6; 
+  border-radius: 8px; 
+  /* 👇 desplaza el form más abajo */
+  margin-top: 2.5cm; 
+}
+
+.join-form-wrap label { 
+  display: flex; 
+  flex-direction: column; 
+  font-weight: 600; 
+  font-size: .95rem; 
+}
+
+.join-form-wrap input[type="text"],
+.join-form-wrap input[type="email"],
+.join-form-wrap input[type="tel"],
+.join-form-wrap textarea { 
+  padding: .55rem; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  font-size: 1rem; 
+  background: #fff;
+}
+
+/* Submit button */
+.btn-submit { 
+  margin-top: .5rem; 
+  padding: .65rem; 
+  background: var(--primary); 
+  color: #fff; 
+  border: none; 
+  border-radius: 6px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  transition: background .2s ease, transform .2s ease;
+}
+.btn-submit:hover { 
+  background: var(--accent); 
+  transform: translateY(-2px); 
+}
+
+/* Membership cards */
+.membership-cards { display: block; }
+
+.cards { 
+  display: grid; 
+  gap: .8rem; 
+  margin-top: .6rem; 
+}
+
+.card { 
+  background: #fff; 
+  padding: 1rem; 
+  border-radius: 10px; 
+  border: 1px solid #e6e6e6; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 20px rgba(11,111,230,0.08); 
+}
+.card h3 { margin: .2rem 0; }
+.card .more-info { 
+  color: var(--primary); 
+  font-weight: 600; 
+  text-decoration: underline; 
+  display: inline-block; 
+  margin-top: .4rem; 
+}
+
+/* Modals */
+.modal { 
+  position: fixed; 
+  inset: 0; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: rgba(0,0,0,0.45); 
+  padding: 1rem; 
+  z-index: 60;
+}
+.modal[hidden] { display: none; }
+.modal-content { 
+  background: #fff; 
+  padding: 1rem; 
+  border-radius: 10px; 
+  max-width: 560px; 
+  width: 100%; 
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12); 
+}
+.modal-close { 
+  margin-top: .8rem; 
+  padding: .5rem .7rem; 
+  background: #eee; 
+  border: none; 
+  border-radius: 6px; 
+  cursor: pointer; 
+}
+
+/* Animations */
+.cards.animate-in .card {
+  animation: cardIn .6s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+.cards.animate-in .card:nth-child(1){ animation-delay: 0.05s; }
+.cards.animate-in .card:nth-child(2){ animation-delay: 0.12s; }
+.cards.animate-in .card:nth-child(3){ animation-delay: 0.20s; }
+.cards.animate-in .card:nth-child(4){ animation-delay: 0.28s; }
+
+@keyframes cardIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Thankyou page styles */
+.thankyou-card { 
+  background: #fff; 
+  padding: 1rem; 
+  border-radius: 10px; 
+  border: 1px solid #e9e9e9; 
+  margin-top: 1rem; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.return-btn { 
+  display: inline-block; 
+  margin-top: 1rem; 
+  padding: .6rem .9rem; 
+  background: var(--primary); 
+  color: #fff; 
+  border-radius: 8px; 
+  text-decoration: none; 
+  font-weight: 700; 
+  transition: background .2s ease, transform .2s ease;
+}
+.return-btn:hover { 
+  background: var(--accent); 
+  transform: translateY(-2px); 
+}
+
+/* Responsive */
+@media (min-width: 900px) {
+  .join-grid { 
+    grid-template-columns: 1fr 360px; 
+    align-items: start; 
+  }
+  .cards { margin-top: 0; }
+  .join-form-wrap form { margin-top: 1.5cm; } /* un poco menos en desktop */
+}

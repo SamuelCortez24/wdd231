@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you — Montevideo Chamber</title>
+  <meta name="description" content="Thank you for applying to join the Montevideo Chamber.">
+  <meta name="author" content="Samuel Cortez">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/join.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+  <script defer src="scripts/date.js"></script>
+  <script defer src="scripts/thankyou.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Homepage">
+        <img src="images/logo.svg" alt="Montevideo Chamber logo" width="44" height="44">
+        <span class="site-title">Montevideo Chamber</span>
+      </a>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="join.html" class="active">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <h1>Thank you — application received</h1>
+    <p>We appreciate your interest in joining the Montevideo Chamber. Below is the required information you submitted; a member of our team will follow up shortly.</p>
+
+    <section class="card thankyou-card" aria-live="polite">
+      <h2>Submitted information</h2>
+      <div id="submitted-info" class="submitted-info">
+        <!-- populated by scripts/thankyou.js -->
+      </div>
+
+      <div class="actions" style="margin-top:1rem;">
+        <a href="index.html" class="return-btn" role="button">Return to Home</a>
+      </div>
+    </section>
+
+    <section style="margin-top:1.4rem;" class="card">
+      <h3>What happens next?</h3>
+      <p style="color:#444;line-height:1.45;">Our membership team will review your application and contact you within 3 business days. If additional documentation is required, we'll reach out to the provided email or mobile number.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="currentyear"></span> Montevideo Chamber — Samuel Cortez</p>
+    </div>
+  </footer>
+</body>
+</html>

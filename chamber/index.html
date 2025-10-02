@@ -1,28 +1,22 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-  <!-- Charset first (validator-friendly) -->
   <meta charset="UTF-8">
-
-  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Montevideo Chamber — Promoting local businesses &amp; events</title>
 
-  <!-- Title -->
-  <title>Montevideo Chamber — Promoting local businesses & events</title>
-
-  <!-- Basic SEO / Identification -->
+  <!-- Basic SEO -->
   <meta name="description" content="Montevideo Chamber — promoting local businesses, events and resources across Montevideo. Find member businesses, upcoming events and local weather updates." />
   <meta name="author" content="Samuel Cortez" />
 
-  <!-- Favicon (local file) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-  <!-- Open Graph (social sharing) — replace og:url with your actual published URL -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Montevideo Chamber — Home" />
   <meta property="og:description" content="Discover Montevideo businesses, events and local weather. Member spotlights and resources for our community." />
-  <meta property="og:image" content="Images/og-image" />
-  <!-- Replace the URL below with your final published page (GitHub Pages URL) -->
+  <meta property="og:image" content="images/og-image.jpg" />
   <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/" />
 
   <!-- Twitter card -->
@@ -31,16 +25,16 @@
   <meta name="twitter:description" content="Discover Montevideo businesses, events and local weather." />
   <meta name="twitter:image" content="images/og-image.jpg" />
 
-  <!-- Optional theme color -->
+  <!-- Theme color -->
   <meta name="theme-color" content="#0a84ff">
 
-  <!-- CSS (mobile-first order) -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/weather.css">
   <link rel="stylesheet" href="styles/large.css">
 
-  <!-- Scripts (defer so DOM is available) -->
+  <!-- Scripts -->
   <script defer src="scripts/date.js"></script>
   <script defer src="scripts/events.js"></script>
   <script defer src="scripts/weather.js"></script>
@@ -55,14 +49,13 @@
       </a>
 
       <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
-          <ul class="nav-list">
+        <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="directory.html">Directory</a></li>
           <li><a href="discover.html">Discover</a></li>
           <li><a href="join.html">Join</a></li>
        </ul>
       </nav>
-
     </div>
   </header>
 
@@ -77,10 +70,26 @@
       </div>
     </section>
 
-    <!-- Events (loaded via scripts/events.js) -->
-    <section class="events">
-      <h2>Upcoming Events</h2>
-      <div class="events-list" id="events-list"></div>
+    <!-- Events -->
+    <section class="events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events</h2>
+      <div id="events-list" class="events-list" aria-live="polite">
+        <!-- Fallback static content (overwritten by JS if data loads) -->
+        <article class="event-card">
+          <div class="event-left">
+            <h3 class="event-title">Montevideo Food Festival</h3>
+            <p class="event-date"><strong>Date:</strong> 11/10/2025</p>
+            <p class="event-desc">A celebration of local cuisine and culture at Parque Rodó.</p>
+          </div>
+        </article>
+        <article class="event-card">
+          <div class="event-left">
+            <h3 class="event-title">Business Innovation Forum</h3>
+            <p class="event-date"><strong>Date:</strong> 19/10/2025</p>
+            <p class="event-desc">Networking and talks on entrepreneurship and startups.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- Weather -->
@@ -91,7 +100,7 @@
       <p class="weather-note">Weather data provided by OpenWeatherMap.</p>
     </section>
 
-    <!-- Spotlights (loaded via scripts/spotlights.js) -->
+    <!-- Spotlights -->
     <section class="spotlights" aria-labelledby="spotlights-heading">
       <h2 id="spotlights-heading">Member Spotlights</h2>
       <div id="spotlights" class="grid"></div>
