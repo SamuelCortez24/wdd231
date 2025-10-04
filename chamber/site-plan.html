@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Site Plan — Montevideo Chamber</title>
+    <meta name="description"
+        content="Site plan for the Montevideo Chamber project: objectives, audience scenarios, color palette, typography, wireframes and testing checklist.">
+    <meta name="author" content="Samuel Cortez">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a84ff;
+            /* main accent / primary buttons */
+            --secondary: #111111;
+            /* headings / dark text */
+            --background: #f5f5f7;
+            /* page background */
+            --card: #ffffff;
+            /* cards / panels */
+            --text: #1d1d1f;
+            /* base text */
+            --muted: #777777;
+            /* helper / captions */
+            --success: #34c759;
+            --radius: 10px;
+            --container: 1100px;
+        }
+
+        /* Base */
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.45;
+            padding: 1.25rem;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .6rem
+        }
+
+        .brand .title {
+            font-weight: 700;
+            color: var(--secondary)
+        }
+
+        h1 {
+            font-family: "Merriweather", serif;
+            color: var(--secondary);
+            margin: 0 0 .6rem
+        }
+
+        h2 {
+            font-size: 1.05rem;
+            margin: 0 0 .45rem;
+            color: var(--secondary)
+        }
+
+        p.lead {
+            color: var(--muted);
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+
+        /* Plan layout */
+        .plan-grid {
+            display: grid;
+            gap: 1rem
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 1rem;
+            border: 1px solid #e8e8ea;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03)
+        }
+
+        dl {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: .3rem .75rem;
+            margin: 0
+        }
+
+        dt {
+            font-weight: 700;
+            color: var(--secondary)
+        }
+
+        dd {
+            margin: 0;
+            color: var(--text)
+        }
+
+        /* Palette swatches */
+        .swatches {
+            display: flex;
+            gap: .6rem;
+            align-items: center
+        }
+
+        .swatch {
+            width: 72px;
+            height: 48px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.06)
+        }
+
+        .swatch-label {
+            font-size: .85rem;
+            margin-top: .25rem;
+            color: var(--muted)
+        }
+
+        /* Wireframes */
+        .wireframes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: .6rem
+        }
+
+        .wf-view {
+            border: 1px dashed #d7d7db;
+            border-radius: 8px;
+            padding: .6rem;
+            background: linear-gradient(180deg, #fff, #fbfbfd)
+        }
+
+        .wf-box {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 6px;
+            padding: .6rem;
+            margin-bottom: .5rem;
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .wf-row {
+            display: flex;
+            gap: .6rem;
+            align-items: flex-start
+        }
+
+        /* Desktop layout for wireframes */
+        @media (min-width:800px) {
+            .plan-grid {
+                grid-template-columns: 1fr 420px
+            }
+
+            .wireframes {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .wf-box {
+                min-height: 44px
+            }
+        }
+
+        /* Checklist */
+        ul.check {
+            margin: 0;
+            padding-left: 1rem
+        }
+
+        .notes {
+            font-size: .95rem;
+            color: var(--muted);
+            margin-top: .5rem
+        }
+
+        footer.plan-foot {
+            margin-top: 1rem;
+            font-size: .9rem;
+            color: var(--muted);
+            text-align: center
+        }
+
+        a.cta {
+            display: inline-block;
+            padding: .45rem .7rem;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div
+                    style="width:44px;height:44px;border-radius:8px;background:var(--primary);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">
+                    MC</div>
+                <div>
+                    <div class="title">Montevideo Chamber</div>
+                    <div style="font-size:.85rem;color:var(--muted)">Site plan — Samuel Cortez</div>
+                </div>
+            </div>
+            <div><a class="cta" href="index.html">View current site</a></div>
+        </header>
+
+        <main class="plan-grid">
+            <!-- Left: primary content -->
+            <section>
+                <h1>Individual Project Site Plan</h1>
+                <p class="lead">Blueprint for the Montevideo Chamber website — outlines purpose, audience scenarios,
+                    colors, typography, wireframes and testing plan. This document will evolve as development continues.
+                </p>
+
+                <div class="card" id="site-name">
+                    <h2>Site Name</h2>
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>Montevideo Chamber</dd>
+
+                        <dt>Reason</dt>
+                        <dd>This name clearly identifies the local business chamber for Montevideo and is suitable for
+                            branding, event promotion and member directory services.</dd>
+
+                        <dt>Suggested domain</dt>
+                        <dd>
+                            montevideochamber.uy (preferred local domain) <br>
+                            montevideochamber.org (international fallback)
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="card" id="purpose" style="margin-top:1rem">
+                    <h2>Site Purpose</h2>
+                    <p>The Montevideo Chamber website will provide a community hub for local businesses, event listings,
+                        member spotlights, and resources. Key features include:</p>
+                    <ul>
+                        <li>Business directory searchable by category and membership level.</li>
+                        <li>Upcoming events feed and event detail pages.</li>
+                        <li>Membership application (Join) with multi-level options and modals describing benefits.</li>
+                        <li>Member spotlights and featured advertising positions for sponsors.</li>
+                        <li>Local weather snippet for Montevideo and contact information for the chamber.</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="scenarios" style="margin-top:1rem">
+                    <h2>Scenarios (target user questions)</h2>
+                    <ul>
+                        <li><strong>Local business owner:</strong> "How do I apply to become a member and what are the
+                            membership benefits?"</li>
+                        <li><strong>Visitor planning an event:</strong> "What chamber-sponsored events are upcoming and
+                            how do I register?"</li>
+                        <li><strong>Resident looking for services:</strong> "Which local businesses offer the service I
+                            need (location, hours, contact)?"</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="colors" style="margin-top:1rem">
+                    <h2>Color Schema</h2>
+                    <p>Primary colors chosen for accessibility, contrast and professional visual identity. These are
+                        used throughout the site and styling in this document reflects the palette.</p>
+
+                    <div style="display:flex;gap:1rem;align-items:center;margin-top:.5rem">
+                        <div>
+                            <div class="swatch" style="background:var(--primary)"></div>
+                            <div class="swatch-label">--primary — #0a84ff (buttons, links, accents)</div>
+                        </div>
+                        <div>
+                            <div class="swatch" style="background:var(--secondary)"></div>
+                            <div class="swatch-label">--secondary — #111111 (headings, strong text)</div>
+                        </div>
+                        <div>
+                            <div class="swatch" style="background:var(--background);border:1px solid #e6e6e6"></div>
+                            <div class="swatch-label">--background — #f5f5f7 (page background)</div>
+                        </div>
+                        <div>
+                            <div class="swatch" style="background:var(--success)"></div>
+                            <div class="swatch-label">--success — #34c759 (status, success badges)</div>
+                        </div>
+                    </div>
+
+                    <dl style="margin-top:.8rem">
+                        <dt>Usage</dt>
+                        <dd>
+                            <ul>
+                                <li><strong>--primary:</strong> primary CTAs, links, active nav, focus outlines.</li>
+                                <li><strong>--secondary:</strong> headings, emphasis text, high-contrast body copy.</li>
+                                <li><strong>--background:</strong> page background, subtle section backgrounds.</li>
+                                <li><strong>--card:</strong> cards and panels background (white)</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="card" id="typography" style="margin-top:1rem">
+                    <h2>Typography</h2>
+                    <p>Selected web fonts (kept simple for readability and performance):</p>
+                    <dl>
+                        <dt>Primary font</dt>
+                        <dd><strong>Inter</strong> — used for body text, navigation, form inputs (weights:
+                            300,400,600,700).</dd>
+                        <dt>Heading font</dt>
+                        <dd><strong>Merriweather</strong> (serif) — used for H1/H2/H3 to add contrast and a formal tone
+                            for headings.</dd>
+                        <dt>Special</dt>
+                        <dd>System UI / monospace only for small code snippets or data displays if necessary.</dd>
+                    </dl>
+                </div>
+
+                <div class="card" id="wireframes" style="margin-top:1rem">
+                    <h2>Wireframe — Home page</h2>
+                    <p class="notes">Simple visual wireframes to communicate layout relationships. Blocks are not final
+                        UI; they describe element placement and hierarchy.</p>
+
+                    <div class="wireframes">
+                        <!-- Mobile wireframe -->
+                        <div class="wf-view">
+                            <strong>Mobile (320–420px)</strong>
+                            <div class="wf-box" style="margin-top:.6rem">Header (logo + nav toggle)</div>
+                            <div class="wf-box">Hero image (stacked) + CTA button</div>
+                            <div class="wf-box">Upcoming Events (vertical cards)</div>
+                            <div class="wf-box">Member Spotlights (carousel / card list)</div>
+                            <div class="wf-box">Directory preview (search + sample entries)</div>
+                            <div class="wf-box">Footer (contact, social)</div>
+                        </div>
+
+                        <!-- Desktop wireframe -->
+                        <div class="wf-view">
+                            <strong>Desktop (≥768px)</strong>
+                            <div class="wf-row" style="margin-top:.6rem">
+                                <div class="wf-box" style="flex:2">Hero (image left, caption + CTA right)</div>
+                                <div class="wf-box" style="flex:1">CTA / Membership box (over hero)</div>
+                            </div>
+
+                            <div class="wf-row">
+                                <div class="wf-box" style="flex:2">Upcoming Events — cards grid</div>
+                                <div class="wf-box" style="flex:1">Directory preview / filters</div>
+                            </div>
+
+                            <div class="wf-row">
+                                <div class="wf-box" style="flex:2">Member Spotlights (grid)</div>
+                                <div class="wf-box" style="flex:1">Weather widget / Contact</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="css" style="margin-top:1rem">
+                    <h2>CSS / Assets</h2>
+                    <p>Planned files and structure (mobile-first):</p>
+                    <ul>
+                        <li><code>styles/normalize.css</code> — reset/normalization</li>
+                        <li><code>styles/small.css</code> — mobile baseline styles (typography, layout, events card
+                            rules)</li>
+                        <li><code>styles/events.css</code> — optional: event-specific styles (if separate)</li>
+                        <li><code>styles/large.css</code> — responsive rules for ≥768px</li>
+                        <li><code>scripts/events.js</code>, <code>scripts/join.js</code> and
+                            <code>scripts/weather.js</code></li>
+                        <li>Image assets inside <code>images/</code> and data inside <code>data/events.json</code></li>
+                    </ul>
+                </div>
+
+                <div class="card" id="testing" style="margin-top:1rem">
+                    <h2>Testing & Validation</h2>
+                    <p>Planned self-audit and tests to run before submission:</p>
+                    <ul class="check">
+                        <li>W3C HTML Validator — valid HTML5 (doctype, lang, meta charset first)</li>
+                        <li>CSS Validator — no major errors</li>
+                        <li>Accessibility audits (Lighthouse / axe): aim for 90+ accessibility score</li>
+                        <li>Lighthouse: Performance, Best practices, SEO (run for mobile + desktop)</li>
+                        <li>Color contrast: Ensure WCAG AA for body text and UI controls (contrast checker)</li>
+                        <li>Keyboard navigation: Tab order, visible focus states for links, forms and modals</li>
+                        <li>Form validation: client-side required attributes + server-side/thankyou page displays
+                            submitted required fields</li>
+                        <li>DevTools console: fix JavaScript runtime errors</li>
+                    </ul>
+
+                    <p class="notes">If the automated course audit tool fails, provide a short note in Canvas and reply
+                        to the grader with a link and description of the steps you took — include screenshots of
+                        Lighthouse results.</p>
+                </div>
+
+                <div class="card" id="submission" style="margin-top:1rem">
+                    <h2>Submission / Repository</h2>
+                    <p>File name: <strong>site-plan.html</strong> (place in <code>wdd231/chamber/</code>)</p>
+                    <p>Recommended git steps (from project root):</p>
+                    <pre style="background:#f7f7f9;padding:.6rem;border-radius:6px;border:1px solid #eee">
+git add wdd231/chamber/site-plan.html
+git commit -m "Add site plan for Montevideo Chamber (week X)"
+git push origin main
+          </pre>
+                    <p class="notes">After pushing, test the public URL:
+                        <code>https://your-github-username.github.io/wdd231/chamber/site-plan.html</code> and submit
+                        that URL to Canvas.</p>
+                </div>
+            </section>
+
+            <!-- Right column: quick references -->
+            <aside>
+                <div class="card">
+                    <h2>Quick Project Summary</h2>
+                    <dl>
+                        <dt>Owner</dt>
+                        <dd>Samuel Cortez</dd>
+                        <dt>Course</dt>
+                        <dd>WDD231 — Chamber Project</dd>
+                        <dt>Primary features</dt>
+                        <dd>Directory, Events, Join form, Spotlights, Weather</dd>
+                    </dl>
+                </div>
+
+                <div class="card" style="margin-top:1rem">
+                    <h2>Minimum Deliverables</h2>
+                    <ol>
+                        <li>Home page with hero, events cards and CTAs</li>
+                        <li>Directory page with grid/list view</li>
+                        <li>Join form (GET → thankyou.html) with required fields + hidden timestamp</li>
+                        <li>Thankyou page showing submitted required fields</li>
+                    </ol>
+                </div>
+
+                <div class="card" style="margin-top:1rem">
+                    <h2>Next Steps & Timeline</h2>
+                    <ul>
+                        <li>Week 4 — Finalize join page & audit fixes (this submission)</li>
+                        <li>Week 5 — Directory improvements & accessibility refinements</li>
+                        <li>Week 6 — Final polish, images, and SEO metadata</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-top:1rem">
+                    <h2>Notes / Risks</h2>
+                    <ul>
+                        <li>Audit tool sometimes fails when pages are served locally — always test the GitHub Pages
+                            published URL.</li>
+                        <li>Make sure paths are relative (no absolute local paths) so the site works on GitHub Pages.
+                        </li>
+                        <li>Keep image file names simple (no spaces) and referenced relatively (e.g.
+                            <code>images/logo.svg</code>).</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="plan-foot">
+            <div>Prepared by Samuel Cortez — Montevideo Chamber project • Save this file as
+                <code>wdd231/chamber/site-plan.html</code></div>
+        </footer>
+    </div>
+</body>
+
+</html>
